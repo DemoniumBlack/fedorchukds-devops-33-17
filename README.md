@@ -43,5 +43,5 @@
 
 ![img_4.png](IMG/img_4.png)
 
-9. Ссылка на описание Playbook: 
+9. Ссылка на описание Playbook: https://github.com/DemoniumBlack/fedorchukds-devops-33-17/blob/08-ansible-02-playbook/SRC/playbook/README.md
 
