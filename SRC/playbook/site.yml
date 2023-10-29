@@ -1,12 +1,6 @@
 ---
 - name: Install Clickhouse
   hosts: clickhouse
-  handlers:
-    - name: Start clickhouse service
-      become: true
-      ansible.builtin.service:
-        name: clickhouse-server
-        state: restarted
   tasks:
     - block:
         - name: Get clickhouse distrib
@@ -35,6 +29,12 @@
       ansible.posix.firewalld:
         port: 9000/tcp
         state: enabled
+  handlers:
+    - name: Start clickhouse service
+      become: true
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: restarted
     - name: Flush handlers
       ansible.builtin.meta: flush_handlers
     - name: Pause 20 sec
