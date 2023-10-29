@@ -26,7 +26,7 @@
       ignore_errors: "{{ ansible_check_mode }}"
     - name: Firewall open port
       become: true
-      ansible.posix.firewalld:
+      ansible.builtin.firewalld:
         port: "{{ item }}"
         permanent: true
         state: enabled
