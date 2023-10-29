@@ -27,8 +27,12 @@
     - name: Firewall open port
       become: true
       ansible.posix.firewalld:
-        port: 9000/tcp
+        port: "{{ item }}"
+        permanent: true
         state: enabled
+      loop:
+        - 9000/tcp
+        - 8123/tcp
   handlers:
     - name: Start clickhouse service
       become: true
